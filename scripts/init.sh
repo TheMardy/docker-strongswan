@@ -34,6 +34,8 @@ echo "*** Certificates already created. Not creating new ones. ***"
 fi
 
 # If the config files are not present, make them available.
+mkdir -p ~/etc
+
 if [ ! -f /root/etc/ipsec.conf ]; then
   cp /usr/config_files/ipsec.conf /root/etc/
 fi
