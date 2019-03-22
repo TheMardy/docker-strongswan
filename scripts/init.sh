@@ -74,7 +74,7 @@ envsubst '
           ${LEFTSUBNET}
           ${RIGHTSOURCEIP}
           ${SERVER_DOMAIN}
-         ' < /etc/ipsec.conf > /etc/ipsec.conf
+         ' < /root/etc/ipsec.conf > /etc/ipsec.conf
 
 # sysctl rules
 sysctl net.ipv4.ip_forward=1
