@@ -33,6 +33,10 @@ else
 echo "*** Certificates already created. Not creating new ones. ***"
 fi
 
+# Copy the certs & configs into the right folder
+cp -r ~/ca/* /etc/ipsec.d/
+cp -r ~/etc/* /etc/
+
 # Checking variables, setting default if empty.
 
 if [ -z "$DNS_SERVERS" ]; then
@@ -54,11 +58,7 @@ envsubst '
           ${LEFTSUBNET}
           ${RIGHTSOURCEIP}
           ${SERVER_DOMAIN}
-         ' < ~/etc/ipsec.conf > ~/etc/ipsec.conf
-
-# Copy the certs & configs into the right folder
-cp -r ~/ca/* /etc/ipsec.d/
-cp -r ~/etc/* /etc/
+         ' < /etc/ipsec.conf > /etc/ipsec.conf
 
 # sysctl rules
 sysctl net.ipv4.ip_forward=1
