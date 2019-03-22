@@ -1,4 +1,4 @@
 #!/bin/bash
 
-echo $1 : EAP \"$2\" >> /root/ipsec.secrets
-cp /root/ipsec.secrets /etc/ipsec.secrets
+echo $1 : EAP \"$2\" >> /root/etc/ipsec.secrets
+cp /root/etc/ipsec.secrets /etc/ipsec.secrets

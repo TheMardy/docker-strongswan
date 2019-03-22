@@ -1,10 +1,10 @@
 # docker-strongswan
 strongSwan in a Docker container
 
-Docker Run command:
+Minimal Docker Run command:
 
 ```
-docker run -rm -d --privileged -e TZ=YOUR_TZ -e SERVER_DOMAIN=YOUR_DOMAIN -p 500:500/udp -p 4500:4500/udp -v YOUR_FOLDER:/root -v /lib/modules:/lib/modules --name=strongSwan themardy/strongswan:latest
+docker run --rm -d --privileged -e TZ=YOUR_TZ -e SERVER_DOMAIN=YOUR_DOMAIN -p 500:500/udp -p 4500:4500/udp -v YOUR_FOLDER:/root -v /lib/modules:/lib/modules --name=strongSwan themardy/strongswan:latest
 ```
 
 Required Variables:
@@ -29,3 +29,10 @@ Volumes:
 | ------------- | ------------- |
 | /lib/modules:/lib/modules  |  strongSwan needs the /lib/modules to run  |
 | YOUR_FOLDER:/root  |  Saves the Certificate files |
+
+Ports: 
+
+| Port  | Explaination |
+| ------------- | ------------- |
+| 500:500/udp  |  Needed by strongSwan  |
+| 4500:4500/udp  |  Needed by strongSwan |
