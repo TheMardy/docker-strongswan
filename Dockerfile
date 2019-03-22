@@ -11,7 +11,9 @@ RUN apk add --update-cache --upgrade \
 
 # Add init script and config files
 
-ADD ./scripts/* /usr/bin/ 
+ADD ./scripts/* /usr/bin/
+RUN mkdir /usr/config_files
+ADD ./etc/* /usr/config_files/
 RUN chmod +x /usr/bin/init.sh && chmod +x /usr/bin/adduser
 
 VOLUME /root/

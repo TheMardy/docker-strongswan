@@ -33,6 +33,20 @@ else
 echo "*** Certificates already created. Not creating new ones. ***"
 fi
 
+# If the config files are not present, make them available.
+if [ ! -f /root/etc/ipsec.conf ]; then
+  cp /usr/config_files/ipsec.conf /root/etc/
+fi
+
+if [ ! -f /root/etc/ipsec.secrets ]; then
+  cp /usr/config_files/ipsec.secrets /root/etc/
+fi
+
+if [ ! -f /root/etc/strongswan.conf ]; then
+  cp /usr/config_files/strongswan.conf /root/etc/
+fi
+
+
 # Copy the certs & configs into the right folder
 cp -r ~/ca/* /etc/ipsec.d/
 cp -r ~/etc/* /etc/

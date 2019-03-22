@@ -4,7 +4,7 @@ strongSwan in a Docker container
 Docker Run command:
 
 ```
-docker run -d --privileged -e TZ=YOUR_TZ -e SERVER_DOMAIN=YOUR_DOMAIN -p 500:500/udp -p 4500:4500/udp -v YOUR_FOLDER:/root -v /lib/modules:/lib/modules themardy/strongswan:latest
+docker run -rm -d --privileged -e TZ=YOUR_TZ -e SERVER_DOMAIN=YOUR_DOMAIN -p 500:500/udp -p 4500:4500/udp -v YOUR_FOLDER:/root -v /lib/modules:/lib/modules --name=strongSwan themardy/strongswan:latest
 ```
 
 Required Variables:
