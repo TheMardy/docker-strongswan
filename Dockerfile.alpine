@@ -14,7 +14,7 @@ RUN apk add --update-cache --upgrade \
 ADD ./scripts/* /usr/bin/
 RUN mkdir /usr/config_files
 ADD ./etc/* /usr/config_files/
-RUN chmod +x /usr/bin/init.sh && chmod +x /usr/bin/adduser
+RUN chmod +x /usr/bin/init.sh && chmod +x /usr/bin/vpn_adduser
 
 VOLUME /root/
 VOLUME /lib/modules
